@@ -1,3 +1,5 @@
+import random
+
 ##################################################################
 #                           main.py
 #
@@ -18,7 +20,29 @@ class Grid:
         pass
 
     def show(self):
-        for i in range (self.n*delf.n):
+        for i in range (self.n*self.n):
             print self.table[i]
 
-    
+    def transposing(self):
+        self.table = map (list, zip(*self.table))
+
+# Метод для перестановки двух строк в пределах одного сектора
+    def swap_rows(self):
+        area = random.randchange(0, self.n, 1)
+        line1 = random.randchange(0, self.n, 1)
+        N1 = area*self.n + line1
+
+        line2 = random.randchange(0, self.n, 1)
+        while (line1 == line2):
+            line2 = random.randchange(0, self.n, 1)
+
+        N2 = area*self.n + line2
+
+        self.table[N1], self.table[N2] = self.table[N2], self.table[N1]
+
+# Метод для перестановки двух столбцов в пределах одного сектора
+    def swap_columns(self):
+        grid.transposing(self)
+        grid.swap_rows(self)
+        grid.transoding(self)
+
