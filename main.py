@@ -46,3 +46,5 @@ class Grid:
         grid.swap_rows(self)
         grid.transoding(self)
 
+# Удаление "лишних" клеток
+
