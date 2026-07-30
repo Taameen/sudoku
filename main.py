@@ -162,3 +162,6 @@ if __name__ == "__main__":
     
     example.show()
     example._print("difficult =", difficult)
+
+# Вывод в формат ПДФ ещё не доделан, но появится в ближайшее время
+
