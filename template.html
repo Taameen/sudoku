@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{TITLE}}</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            color: #222;
+        }
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        .rules {
+            background: #f5f5f5;
+            padding: 15px 25px;
+            border-left: 4px solid #333;
+            margin-bottom: 30px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .rules h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        .rules ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            background: white;
+        }
+        td {
+            width: 45px;
+            height: 45px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 22px;
+            font-weight: bold;
+            border: 1px solid #666;
+        }
+        td.empty {
+            background: #fafafa;
+            color: transparent;
+        }
+        td.thick-right {
+            border-right: 3px solid #111;
+        }
+        td.thick-bottom {
+            border-bottom: 3px solid #111;
+        }
+        /* Утолщаем внешние границы таблицы */
+        tr:first-child td { border-top: 3px solid #111; }
+        tr:last-child td { border-bottom: 3px solid #111; }
+        td:first-child { border-left: 3px solid #111; }
+        td:last-child { border-right: 3px solid #111; }
+        
+        /* Стили для печати */
+        @media print {
+            body { margin: 0; padding: 10mm; }
+            .no-print { display: none; }
+        }
+        .print-hint {
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{TITLE}}</h1>
+    
+    <div class="rules">
+        <h2>Правила решения:</h2>
+        <ol>
+            <li>Цифра может появиться только один раз в каждой строчке.</li>
+            <li>Цифра может появиться только один раз в каждом столбце.</li>
+            <li>Цифра может появиться только один раз в каждом секторе (квадрат 3×3).</li>
+        </ol>
+    </div>
+    
+    <table>
+        {{TABLE_ROWS}}
+    </table>
+    
+    <p class="print-hint no-print">💡 Нажмите <b>Ctrl+P</b> (или <b>Cmd+P</b> на Mac), чтобы распечатать или сохранить как PDF</p>
+</body>
+</html>
